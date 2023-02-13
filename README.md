@@ -9,6 +9,7 @@ Gravity force simulation with SDL and ImGui
 - Move planets with right mouse button 
 - Read from file
 - Save to file
+
 Calculations are based on [Newton's law of universal gravitaion](https://en.wikipedia.org/wiki/Gravity)
 
 ### Screenshots
