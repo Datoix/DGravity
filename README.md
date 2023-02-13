@@ -12,4 +12,4 @@ Gravity force simulation with SDL and ImGui
 Calculations are based on [Newton's law of universal gravitaion](https://en.wikipedia.org/wiki/Gravity)
 
 ### Screenshots
-![screenshot](img/screenshot1.png)
+![screenshot](img/screenshot.png)
