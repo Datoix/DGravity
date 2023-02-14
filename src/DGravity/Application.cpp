@@ -177,15 +177,9 @@ namespace DGravity {
 			Vec2 mousePosition(e.button.x, e.button.y);
 
 			for (Physics::Body* body : universe->bodies) {
-				Vec2 pixelPosition = graphicsManager->GetCamera().Convert(body->position) 
-					- (Vec2(body->radius, body->radius) * config.settings.scaleMultiplier);
+				Vec2 pixelPosition = graphicsManager->GetCamera().Convert(body->position);
 
-				if (
-					mousePosition.x > pixelPosition.x
-					&& mousePosition.x < pixelPosition.x + 2 * body->radius * config.settings.scaleMultiplier
-					&& mousePosition.y > pixelPosition.y
-					&& mousePosition.y < pixelPosition.y + 2 * body->radius * config.settings.scaleMultiplier) 
-				{
+				if ((mousePosition - pixelPosition).Magnitude() <= body->radius * config.settings.scaleMultiplier) {
 					selectedBody = body;
 					selectedBody->drawOrbit = false;
 					break;
