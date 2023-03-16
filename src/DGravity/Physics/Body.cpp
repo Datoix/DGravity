@@ -23,12 +23,7 @@ namespace DGravity::Physics {
 		// F = G*m2/R^2
 		double accelerationValue = settings.G * body->mass / (std::pow(distance.Magnitude(), 2));
 
-		double angle = std::atan2(distance.y, distance.x);
-	
-		return Vec2(
-			std::cos(angle) * accelerationValue,
-			std::sin(angle) * accelerationValue
-		);
+		return distance.Normalize() * accelerationValue;
 	}
 
 	void Body::SetAcceleration(const Vec2& a) {
